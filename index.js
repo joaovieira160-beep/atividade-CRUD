@@ -91,3 +91,20 @@ function listarAlunos(){
         alert(texto)
 
 }
+
+function removerAluno(){
+    let nome = prompt("digite o nome do aluno que deseja retirar: ")
+
+    let alunoEncontrado = buscarAluno(nome)
+
+        if(!alunoEncontrado){
+            alert("aluno nao cadastrado")
+            return
+        }
+
+    let posicao = alunos.indexOf(alunoEncontrado);
+
+    alunos.splice(posicao,1)
+
+    alert("aluno removido com sucesso")
+}
