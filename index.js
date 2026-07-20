@@ -108,3 +108,26 @@ function removerAluno(){
 
     alert("aluno removido com sucesso")
 }
+
+//PARTE 3
+
+function lancarNota(){
+    let nome = prompt("qual o nome do aluno que deseja lançar a nota?:")
+    let alunoEncontrado = buscarAluno(nome);
+
+    if(!alunoEncontrado){
+        alert("aluno nao encontrado")
+        return
+    }
+
+    let nota = Number(prompt("digite a nota para adicionar:"))
+
+    if(nota < 0 || nota > 10 || isNaN(nota)){
+        alert("valor invalido!")
+        return
+    }
+
+    alunoEncontrado.notas.push(nota)
+
+    alert(`a nota ${nota} foi adicionada com sucesso para o aluno ${alunoEncontrado.nome}.`)
+}
