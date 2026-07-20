@@ -1,4 +1,4 @@
-
+const prompt = require('prompt-sync')()
 
 let alunos = [
     { nome: "Ana", notas: [8, 7, 9] },
@@ -7,7 +7,7 @@ let alunos = [
 ]
 
 function buscarAluno(nomeBusca){
-    for (let i= 0; i<= alunos.length;i++){
+    for (let i= 0; i< alunos.length;i++){
             if(alunos[i].nome.toLowerCase() === nomeBusca.toLowerCase()){
                 return alunos[i]
 
@@ -58,3 +58,21 @@ function situacao(resultado){
 }
 
 console.log(situacao(resultado))
+
+//PARTE 2 
+
+function cadastro(){
+    let nome = prompt("qual nome do aluno?:");
+
+    if(buscarAluno(nome)){
+        alert("aluno ja cadastrado");
+        return
+    }
+
+    alunos.push({nome : nome , notas : []})
+    alert("aluno cadastrado com sucesso")
+}
+
+
+console.log(alunos)
+
