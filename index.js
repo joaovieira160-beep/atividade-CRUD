@@ -16,6 +16,8 @@ function buscarAluno(nomeBusca){
     return undefined
 }
 
+let resultado = 0
+
 console.log(buscarAluno("ana"))
 
 function calcularMedia(alunosnome){
@@ -33,5 +35,26 @@ function calcularMedia(alunosnome){
     return resultado / alunosnome.notas.length;
 }
 
+resultado = calcularMedia(alunos[1])
+
 
 console.log(calcularMedia(alunos[1]))
+
+
+
+function situacao(resultado){
+
+    if( resultado>=6 ){
+        return "aprovado"
+    }
+    else if( resultado>= 4 && resultado < 6){
+        return "recuperaçao"
+    }else if(resultado < 4 && resultado >= 0){
+        return "reprovado"
+    }else{
+        return "notas nao encontradas"
+    }
+    
+}
+
+console.log(situacao(resultado))
