@@ -18,3 +18,20 @@ function buscarAluno(nomeBusca){
 
 console.log(buscarAluno("ana"))
 
+function calcularMedia(alunosnome){
+
+        if(alunosnome.notas.length === 0){
+            return 0
+        }
+
+    let resultado = 0
+    for(let i=0; i< alunosnome.notas.length;i++){
+                resultado += alunosnome.notas[i]
+
+        
+    }
+    return resultado / alunosnome.notas.length;
+}
+
+
+console.log(calcularMedia(alunos[1]))
