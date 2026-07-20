@@ -76,3 +76,18 @@ function cadastro(){
 
 console.log(alunos)
 
+function listarAlunos(){
+    if(alunos.length ===0){
+        console.log("nenhum aluno cadastrado");
+        return
+    }
+
+    let texto = "lista dos alunos cadastrados\n\n";
+
+    for(let i = 0 ; i < alunos.length;i++){
+        texto += "-" + alunos[i].nome + "\n" 
+    }
+
+        alert(texto)
+
+}
