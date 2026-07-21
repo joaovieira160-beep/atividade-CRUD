@@ -147,3 +147,12 @@ function verBoletim(){
       let status = situacao(media)
     return alert("Nome: " + alunoEncontrado.nome + "\nMedia: " + media.toFixed(2) + "\nSituaçao: " + status )
     }
+
+
+    //PARTE 4
+
+    function totalAlunos(){
+        alert ("total de alunos: "+alunos.length)
+    }
+
+    
