@@ -172,3 +172,24 @@ function verBoletim(){
         const mediaGeral= somaMedias / alunos.length 
         alert("a media geral da turma é: "+ mediaGeral.toFixed(2))
     }
+
+
+    function listarAprovados(){
+        let texto = "";
+        let encontrou = false;
+
+        for (let i= 0; i< alunos.length;i++){
+            let media = calcularMedia(alunos[i])
+
+            if(situacao(media) === "Aprovado"){
+              texto += `Nome : ${alunos[i].nome} | Media: ${media.toFixed(2)} \n`
+                encontrou = true;
+                
+            }
+        }
+        if (!encontrou){
+            texto = "Ainda nao à aprovados"
+            
+        }
+        alert(texto)
+    }
