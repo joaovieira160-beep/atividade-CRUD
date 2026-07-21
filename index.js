@@ -155,4 +155,20 @@ function verBoletim(){
         alert ("total de alunos: "+alunos.length)
     }
 
-    
+
+    function verMediaGeral(){
+
+        if(alunos.length === 0){
+            alert("nenhum aluno encontrado")
+            return 
+        }
+
+        let somaMedias = 0
+
+        for (let i= 0; i< alunos.length;i++){
+            somaMedias += calcularMedia(alunos[i])
+        }
+
+        const mediaGeral= somaMedias / alunos.length 
+        alert("a media geral da turma é: "+ mediaGeral.toFixed(2))
+    }
