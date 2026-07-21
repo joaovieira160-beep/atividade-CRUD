@@ -240,3 +240,25 @@ function submenuNotas(){
 } while (opcao !== 0);
 }
 
+function submenuRelatorios(){
+    do {
+    opcao = Number( prompt("===submenu de Relatorios===\n1-Total de alunos\n2-Media geral da turma\n3-Listar aprovados\n0-voltar\nescolha uma opçao: ") );
+
+    switch (opcao) {
+        case 1: totalAlunos();
+         break;
+       
+        case 2: verMediaGeral
+        break; 
+        
+        case 3: listarAprovados();
+        break;
+
+        case 0: 
+        break;
+
+        default:
+             alert("Opcao invalida!");  
+    }
+} while (opcao !== 0);
+}
