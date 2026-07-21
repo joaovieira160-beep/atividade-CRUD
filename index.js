@@ -193,3 +193,28 @@ function verBoletim(){
         }
         alert(texto)
     }
+
+//PARTE 5 / OS MENUS
+
+function submenuCadastro(){
+    do {
+    opcao = Number( prompt("===submenu de Cadastro===\n1-cadastrar aluno\n2-Listar alunos\n3-Remover alunos\n0-voltar\nescolha uma opçao: ") );
+
+    switch (opcao) {
+        case 1: cadastro();
+         break;
+       
+        case 2: listarAlunos();
+        break; 
+
+        case 3: removerAluno();
+        break;
+        
+        case 0: 
+        break;
+
+        default:
+             alert("Opcao invalida!");  
+    }
+} while (opcao !== 0);
+}
