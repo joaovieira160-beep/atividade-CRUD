@@ -1,8 +1,9 @@
-const prompt = require('prompt-sync')()
+
+//PARTE 1
 
 let alunos = [
     { nome: "Ana", notas: [8, 7, 9] },
-    { nome: "vitor", notas: [7, 9, 10] },
+    { nome: "Vitor", notas: [7, 9, 10] },
     { nome: "lucas", notas: [4, 5, 7] }
 ]
 
@@ -45,14 +46,14 @@ console.log(calcularMedia(alunos[1]))
 function situacao(resultado){
 
     if( resultado>=6 ){
-        return "aprovado"
+        return "Aprovado"
     }
     else if( resultado>= 4 && resultado < 6){
-        return "recuperaçao"
+        return "Recuperaçao"
     }else if(resultado < 4 && resultado >= 0){
-        return "reprovado"
+        return "Reprovado"
     }else{
-        return "notas nao encontradas"
+        return "Notas nao encontradas"
     }
     
 }
@@ -62,15 +63,15 @@ console.log(situacao(resultado))
 //PARTE 2 
 
 function cadastro(){
-    let nome = prompt("qual nome do aluno?:");
+    let nome = prompt("Qual nome do aluno?:");
 
     if(buscarAluno(nome)){
-        alert("aluno ja cadastrado");
+        alert("Aluno ja cadastrado");
         return
     }
 
     alunos.push({nome : nome , notas : []})
-    alert("aluno cadastrado com sucesso")
+    alert("Aluno cadastrado com sucesso")
 }
 
 
@@ -78,11 +79,11 @@ console.log(alunos)
 
 function listarAlunos(){
     if(alunos.length ===0){
-        console.log("nenhum aluno cadastrado");
+        console.log("Nenhum aluno cadastrado");
         return
     }
 
-    let texto = "lista dos alunos cadastrados\n\n";
+    let texto = "Lista dos alunos cadastrados\n\n";
 
     for(let i = 0 ; i < alunos.length;i++){
         texto += "-" + alunos[i].nome + "\n" 
@@ -93,12 +94,12 @@ function listarAlunos(){
 }
 
 function removerAluno(){
-    let nome = prompt("digite o nome do aluno que deseja retirar: ")
+    let nome = prompt("Digite o nome do aluno que deseja retirar: ")
 
     let alunoEncontrado = buscarAluno(nome)
 
         if(!alunoEncontrado){
-            alert("aluno nao cadastrado")
+            alert("Aluno nao cadastrado")
             return
         }
 
@@ -106,28 +107,43 @@ function removerAluno(){
 
     alunos.splice(posicao,1)
 
-    alert("aluno removido com sucesso")
+    alert("Aluno removido com sucesso")
 }
 
 //PARTE 3
 
 function lancarNota(){
-    let nome = prompt("qual o nome do aluno que deseja lançar a nota?:")
+    let nome = prompt("Qual o nome do aluno que deseja lançar a nota?:")
     let alunoEncontrado = buscarAluno(nome);
 
     if(!alunoEncontrado){
-        alert("aluno nao encontrado")
+        alert("Aluno nao encontrado")
         return
     }
 
-    let nota = Number(prompt("digite a nota para adicionar:"))
+    let nota = Number(prompt("Digite a nota para adicionar:"))
 
     if(nota < 0 || nota > 10 || isNaN(nota)){
-        alert("valor invalido!")
+        alert("Valor invalido!")
         return
     }
 
     alunoEncontrado.notas.push(nota)
 
-    alert(`a nota ${nota} foi adicionada com sucesso para o aluno ${alunoEncontrado.nome}.`)
+    alert(`A nota ${nota} foi adicionada com sucesso para o aluno ${alunoEncontrado.nome}.`)
 }
+
+
+function verBoletim(){
+     let nome = prompt("Qual aluno deseja ver o boletim?:")
+     let alunoEncontrado = buscarAluno(nome);
+    
+
+     if(alunoEncontrado == undefined){
+         alert("Aluno nao encontrado")
+         return
+     }
+      let media = calcularMedia(alunoEncontrado);
+      let status = situacao(media)
+    return alert("Nome: " + alunoEncontrado.nome + "\nMedia: " + media.toFixed(2) + "\nSituaçao: " + status )
+    }
