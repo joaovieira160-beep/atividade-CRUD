@@ -248,7 +248,7 @@ function submenuRelatorios(){
         case 1: totalAlunos();
          break;
        
-        case 2: verMediaGeral
+        case 2: verMediaGeral();
         break; 
         
         case 3: listarAprovados();
