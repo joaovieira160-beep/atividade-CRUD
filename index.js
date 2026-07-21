@@ -198,7 +198,7 @@ function verBoletim(){
 
 function submenuCadastro(){
     do {
-    opcao = Number( prompt("===submenu de Cadastro===\n1-cadastrar aluno\n2-Listar alunos\n3-Remover alunos\n0-voltar\nescolha uma opçao: ") );
+    opcao = Number( prompt("===submenu de Cadastro===\n1-cadastrar aluno\n2-Listar alunos\n3-Remover alunos\n0-voltar ") );
 
     switch (opcao) {
         case 1: cadastro();
@@ -210,7 +210,7 @@ function submenuCadastro(){
         case 3: removerAluno();
         break;
         
-        case 0: 
+        case 0: menuPrincipal()
         break;
 
         default:
@@ -222,7 +222,7 @@ function submenuCadastro(){
 
 function submenuNotas(){
     do {
-    opcao = Number( prompt("===submenu de Notas===\n1-Lançar nota\n2-ver boletins\n0-voltar\nescolha uma opçao: ") );
+    opcao = Number( prompt("===submenu de Notas===\n1-Lançar nota\n2-ver boletins\n0-voltar") );
 
     switch (opcao) {
         case 1: lancarNota();
@@ -231,7 +231,7 @@ function submenuNotas(){
         case 2: verBoletim();
         break; 
         
-        case 0: 
+        case 0: menuPrincipal()
         break;
 
         default:
@@ -242,7 +242,7 @@ function submenuNotas(){
 
 function submenuRelatorios(){
     do {
-    opcao = Number( prompt("===submenu de Relatorios===\n1-Total de alunos\n2-Media geral da turma\n3-Listar aprovados\n0-voltar\nescolha uma opçao: ") );
+    opcao = Number( prompt("===submenu de Relatorios===\n1-Total de alunos\n2-Media geral da turma\n3-Listar aprovados\n0-voltar") );
 
     switch (opcao) {
         case 1: totalAlunos();
@@ -254,7 +254,7 @@ function submenuRelatorios(){
         case 3: listarAprovados();
         break;
 
-        case 0: 
+        case 0: menuPrincipal()
         break;
 
         default:
@@ -262,3 +262,28 @@ function submenuRelatorios(){
     }
 } while (opcao !== 0);
 }
+
+function menuPrincipal(){
+    do {
+    opcao = Number( prompt("===Menu Principal===\n1-cadastros\n2-Notas\n3-Relatorios\n0-Sair ") );
+
+    switch (opcao) {
+        case 1: submenuCadastro();
+         break;
+       
+        case 2: submenuNotas();
+        break; 
+        
+        case 3: submenuRelatorios();
+        break;
+
+        case 0: alert("programa encerrado")
+        break;
+
+        default:
+             alert("Opcao invalida!");  
+    }
+} while (opcao !== 0);
+}
+
+menuPrincipal();
