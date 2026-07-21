@@ -218,3 +218,25 @@ function submenuCadastro(){
     }
 } while (opcao !== 0);
 }
+
+
+function submenuNotas(){
+    do {
+    opcao = Number( prompt("===submenu de Notas===\n1-Lançar nota\n2-ver boletins\n0-voltar\nescolha uma opçao: ") );
+
+    switch (opcao) {
+        case 1: lancarNota();
+         break;
+       
+        case 2: verBoletim();
+        break; 
+        
+        case 0: 
+        break;
+
+        default:
+             alert("Opcao invalida!");  
+    }
+} while (opcao !== 0);
+}
+
